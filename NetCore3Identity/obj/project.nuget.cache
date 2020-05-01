@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Il2/2ujk7N/B7ENGUrRB9Ml2LrCQWi0HiQio1mJmkFFKsW0Rih0aQtQU+j5S289XwEKlQMeNVZZw6DUQVlh6lA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mitiku\\source\\repos\\NetCore3Identity\\NetCore3Identity\\NetCore3Identity.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mitiku\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.8\\microsoft.visualstudio.azure.containers.tools.targets.1.10.8.nupkg.sha512"
+  ],
+  "logs": []
+}

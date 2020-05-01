@@ -1,0 +1,45 @@
+﻿@page
+@model NetCore3Identity.Pages.Account.LoginModel
+@{
+}
+
+
+<div class="container my-5">
+
+    <!-- Section -->
+    <section>
+
+        <h3 class="font-weight-normal text-center dark-grey-text pb-2 display-4"><strong>Login</strong></h3>
+        <hr class="w-header my-4">
+        <p class="lead text-center text-muted pt-2 mb-5">Login for model project.</p>
+
+        <!--First row-->
+        <div class="row d-flex justify-content-center">
+
+            <!--First column-->
+            <form class="col-6" method="post">
+
+                <div class="md-form mb-5">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <input type="text"  id ="username"class="form-control validate" asp-for="@Model.UserName">
+                    <label data-error="wrong" data-success="right" for="username">Your Username</label>
+                </div>
+
+                <div class="md-form mb-4">
+                    <i class="fas fa-lock prefix grey-text"></i>
+                    <input type="password" id="defaultForm-pass" class="form-control validate" asp-for="@Model.Password">
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+                </div>
+
+                <button class="btn btn-block btn-primary btn-lg" type="submit">Sign In</button>
+
+            </form>
+            <!--First column-->
+
+        </div>
+        <!--First row-->
+
+    </section>
+    <!-- Section -->
+
+</div>

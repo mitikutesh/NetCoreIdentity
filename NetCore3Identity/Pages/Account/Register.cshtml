@@ -1,0 +1,50 @@
+﻿@page
+@model NetCore3Identity.Pages.Account.RegisterModel
+@{
+}
+
+    <div class="container my-5">
+
+        <!-- Section -->
+        <section>
+
+            <h3 class="font-weight-normal text-center dark-grey-text pb-2 display-4"><strong>Register</strong></h3>
+            <hr class="w-header my-4">
+            <p class="lead text-center text-muted pt-2 mb-5">Register for model project.</p>
+
+            <!--First row-->
+            <div class="row d-flex justify-content-center">
+
+                <!--First column-->
+                <form class="col-6" method="post">
+
+                    <!-- Material outline input -->
+                    <div class="md-form md-outline form-lg">
+                        <input type="text" id="form1" class="form-control form-control-lg" asp-for="@Model.UserName">
+                        <label for="form1">UserName</label>
+                    </div>
+
+                    <!-- Material outline input -->
+                    <div class="md-form md-outline form-lg">
+                        <input type="text" id="form2" class="form-control form-control-lg" asp-for="@Model.Email">
+                        <label for="form2">Email</label>
+                    </div>
+
+                    <!-- Material outline input -->
+                    <div class="md-form md-outline form-lg">
+                        <input type="password" id="form3" class="form-control form-control-lg" asp-for="@Model.Password">
+                        <label for="form3">Password</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-block btn-primary btn-lg" >Sign up</button>
+
+                </form>
+                <!--First column-->
+
+            </div>
+            <!--First row-->
+
+        </section>
+        <!-- Section -->
+
+    </div>

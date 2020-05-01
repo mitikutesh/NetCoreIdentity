@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mitiku\\source\\repos\\NetCore3Identity\\NetCore3Identity\\NetCore3Identity.csproj": {}
+    "C:\\Users\\Mitiku\\source\\repos\\NetCore3Identity\\NetCoreIdentity\\NetCore3Identity\\NetCore3Identity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mitiku\\source\\repos\\NetCore3Identity\\NetCore3Identity\\NetCore3Identity.csproj": {
+    "C:\\Users\\Mitiku\\source\\repos\\NetCore3Identity\\NetCoreIdentity\\NetCore3Identity\\NetCore3Identity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mitiku\\source\\repos\\NetCore3Identity\\NetCore3Identity\\NetCore3Identity.csproj",
+        "projectUniqueName": "C:\\Users\\Mitiku\\source\\repos\\NetCore3Identity\\NetCoreIdentity\\NetCore3Identity\\NetCore3Identity.csproj",
         "projectName": "NetCore3Identity",
-        "projectPath": "C:\\Users\\Mitiku\\source\\repos\\NetCore3Identity\\NetCore3Identity\\NetCore3Identity.csproj",
+        "projectPath": "C:\\Users\\Mitiku\\source\\repos\\NetCore3Identity\\NetCoreIdentity\\NetCore3Identity\\NetCore3Identity.csproj",
         "packagesPath": "C:\\Users\\Mitiku\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mitiku\\source\\repos\\NetCore3Identity\\NetCore3Identity\\obj\\",
+        "outputPath": "C:\\Users\\Mitiku\\source\\repos\\NetCore3Identity\\NetCoreIdentity\\NetCore3Identity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -41,9 +41,31 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.10.8, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.2, )"
             }
           },
           "imports": [

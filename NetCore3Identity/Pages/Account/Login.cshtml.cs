@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
 using NetCore3Identity.Data;
 
 namespace NetCore3Identity.Pages.Account
@@ -46,20 +47,20 @@ namespace NetCore3Identity.Pages.Account
             return RedirectToPage("/Account/Register");
         }
 
-        public IActionResult Authenticate()
-        {
-            var myclaims = new List<Claim>()
-            {
-                new Claim(ClaimTypes.Name, "Mitiku"),
-                new Claim(ClaimTypes.Email, "mitikutesh@gmailc.om")
-            };
+        //public IActionResult Authenticate()
+        //{
+        //    var myclaims = new List<Claim>()
+        //    {
+        //        new Claim(ClaimTypes.Name, "Mitiku"),
+        //        new Claim(ClaimTypes.Email, "mitikutesh@gmailc.om")
+        //    };
 
-            var myIdentity = new ClaimsIdentity(myclaims, "My Claim");
-            var userPrincipal = new ClaimsPrincipal(new[] { myIdentity });
+        //    var myIdentity = new ClaimsIdentity(myclaims, "My Claim");
+        //    var userPrincipal = new ClaimsPrincipal(new[] { myIdentity });
 
-            HttpContext.SignInAsync(userPrincipal);
-            return RedirectToAction("Index");
-        }
+        //    HttpContext.SignInAsync(userPrincipal);
+        //    return RedirectToAction("Index");
+        //}
 
     }
 }

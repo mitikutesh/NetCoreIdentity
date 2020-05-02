@@ -1,15 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NETCore.MailKit.Extensions;
+using NETCore.MailKit.Infrastructure.Internal;
 using NetCore3Identity.Data;
 
 namespace NetCore3Identity
@@ -35,10 +32,14 @@ namespace NetCore3Identity
                 config.Password.RequireDigit = false;
                 config.Password.RequireNonAlphanumeric = false;
                 config.Password.RequireUppercase = false;
+                config.Password.RequireLowercase = false;
+                config.SignIn.RequireConfirmedEmail = true;
+                
             })
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
-
+            var mailOptions = Configuration.GetSection("Email").Get<MailKitOptions>();
+            services.AddMailKit(config =>config.UseMailKit(mailOptions));
             services.ConfigureApplicationCookie(config =>
             {
                 config.Cookie.Name = "Demo.Identity";

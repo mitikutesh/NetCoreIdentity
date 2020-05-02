@@ -8,7 +8,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NETCore.MailKit.Extensions;
 using NETCore.MailKit.Infrastructure.Internal;
+using NetCore3Identity.AutherizationService;
 using NetCore3Identity.Data;
+using System.Security.Claims;
 
 namespace NetCore3Identity
 {
@@ -47,11 +49,17 @@ namespace NetCore3Identity
                 config.Cookie.Name = "Demo.Identity";
                 config.LoginPath = "/Account/Login";
             });
-
-            services.AddAuthorization(config => {
-                config.DefaultPolicy = new AuthorizationPolicyBuilder()
-                                                        .RequireAuthenticatedUser()
-                                                        .Build();
+            services.AddScoped<IAuthorizationHandler, CustomRequirementHandler>();
+            services.AddAuthorization(config =>
+            {
+                config.AddPolicy("Claim.DoB", a =>
+                {
+                    a.AddRequirements(new CustomRequirementClaim(ClaimTypes.DateOfBirth));
+                });
+                //config.DefaultPolicy = new AuthorizationPolicyBuilder()
+                //                                        .RequireAuthenticatedUser()
+                //                                        //.RequireClaim(ClaimTypes.DateOfBirth)
+                //                                        .Build();
             });
             services.AddRazorPages();
         }

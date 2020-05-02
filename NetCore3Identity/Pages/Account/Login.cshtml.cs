@@ -43,6 +43,8 @@ namespace NetCore3Identity.Pages.Account
                 var result = await _signInManager.PasswordSignInAsync(user, password,false,false);
                 if (result.Succeeded)
                     return RedirectToPage(ReturnUrl);
+                else
+                    return RedirectToPage("/Account/Register");
             }
             return RedirectToPage("/Account/Register");
         }

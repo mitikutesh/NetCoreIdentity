@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -40,10 +41,17 @@ namespace NetCore3Identity
                 .AddDefaultTokenProviders();
             var mailOptions = Configuration.GetSection("Email").Get<MailKitOptions>();
             services.AddMailKit(config =>config.UseMailKit(mailOptions));
+           
             services.ConfigureApplicationCookie(config =>
             {
                 config.Cookie.Name = "Demo.Identity";
                 config.LoginPath = "/Account/Login";
+            });
+
+            services.AddAuthorization(config => {
+                config.DefaultPolicy = new AuthorizationPolicyBuilder()
+                                                        .RequireAuthenticatedUser()
+                                                        .Build();
             });
             services.AddRazorPages();
         }
